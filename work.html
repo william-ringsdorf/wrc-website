@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work with William · William Ringsdorf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Syne:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1A365D;
+    --cream:#F4ECD8;
+    --orange:#C7522A;
+    --teal:#2A9D8F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Syne',sans-serif;font-weight:400;font-size:19px;line-height:1.65;color:var(--navy);background:var(--cream);}
+  .navy{background:var(--navy);color:var(--cream);}
+  .cream{background:var(--cream);color:var(--navy);}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  section{padding:110px 0;}
+  h1,h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-style:normal;line-height:1.08;}
+  h1{font-size:clamp(44px,6.4vw,76px);letter-spacing:-0.5px;}
+  h2{font-size:clamp(34px,4.2vw,54px);margin-bottom:34px;}
+  p{max-width:680px;}
+  a{color:inherit;}
+
+  /* Navigation */
+  nav{padding:26px 0;}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .wordmark{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;text-decoration:none;}
+  .navlinks{display:flex;align-items:center;gap:30px;flex-wrap:wrap;}
+  .navlinks a{font-size:16px;font-weight:500;text-decoration:none;}
+  .btn{display:inline-block;background:var(--orange);color:var(--cream);font-family:'Syne',sans-serif;font-weight:500;font-size:17px;text-decoration:none;padding:15px 32px;border:none;cursor:pointer;}
+  .btn:hover{background:#B04824;}
+
+  /* Hero */
+  .hero{padding:130px 0 140px;}
+  .eyebrow{font-size:16px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:30px;}
+  .hero h1{max-width:900px;margin-bottom:36px;}
+  .hero .sub{font-size:21px;max-width:640px;margin-bottom:44px;}
+  .hero .actions{display:flex;align-items:center;gap:34px;flex-wrap:wrap;}
+  .textlink{font-weight:500;font-size:17px;text-decoration:underline;text-underline-offset:5px;}
+  .marked{position:relative;display:inline-block;}
+  .marked svg{position:absolute;left:0;bottom:-10px;width:100%;height:18px;}
+
+  /* Fork */
+  .fork-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:14px;}
+  @media(max-width:820px){.fork-grid{grid-template-columns:1fr;}}
+  .fork-card{border:2px solid var(--navy);padding:44px 40px;}
+  .fork-card h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:31px;margin-bottom:16px;line-height:1.15;}
+  .fork-card p{margin-bottom:26px;font-size:18px;}
+  .intro{font-size:21px;margin-bottom:38px;}
+
+  /* Reframe */
+  .accent{color:var(--orange);}
+  .navy .accent{color:#E07B54;}
+  .bigp{font-size:21px;}
+
+  /* Brutal math */
+  .math-line{display:flex;align-items:baseline;gap:26px;flex-wrap:wrap;margin:10px 0 44px;}
+  .math-line .state{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,4.4vw,58px);line-height:1.15;}
+  .math-line .arrow{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,4.4vw,58px);color:var(--orange);}
+  .math-line .small{display:block;font-family:'Syne',sans-serif;font-weight:500;font-size:16px;margin-top:8px;}
+
+  /* Story */
+  .story-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start;}
+  @media(max-width:820px){.story-grid{grid-template-columns:1fr;}}
+  .portrait{width:100%;height:auto;display:block;}
+  .stats{display:flex;gap:64px;flex-wrap:wrap;margin-top:56px;}
+  .stat .num{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:58px;line-height:1;}
+  .stat .label{display:block;font-size:16px;font-weight:500;margin-top:10px;}
+
+  /* Offers */
+  .offer{border-top:2px solid var(--navy);padding:44px 0;display:grid;grid-template-columns:1.1fr 2fr auto;gap:30px;align-items:start;}
+  @media(max-width:820px){.offer{grid-template-columns:1fr;gap:14px;}}
+  .offer:last-of-type{border-bottom:2px solid var(--navy);}
+  .offer h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:32px;line-height:1.12;}
+  .offer .price{display:block;font-family:'Syne',sans-serif;font-weight:500;font-size:18px;margin-top:10px;}
+  .offer p{font-size:18px;}
+  .offer .textlink{white-space:nowrap;margin-top:6px;}
+  .downladder{margin-top:44px;font-size:18px;}
+
+  /* Call */
+  .call p{margin-bottom:42px;}
+
+  /* Footer */
+  footer{padding:80px 0 60px;}
+  .foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:56px;}
+  @media(max-width:820px){.foot-grid{grid-template-columns:1fr;}}
+  footer h4{font-family:'Syne',sans-serif;font-weight:500;font-size:15px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;}
+  footer li a{font-size:17px;text-decoration:none;}
+  footer li a:hover{text-decoration:underline;}
+  .bioline{border-top:2px solid var(--navy);padding-top:28px;font-size:16px;font-weight:500;}
+
+  /* Mobile refinements */
+  @media(max-width:600px){
+    section{padding:72px 0;}
+    .hero{padding:84px 0 96px;}
+    nav .wrap{justify-content:center;text-align:center;}
+    .navlinks{justify-content:center;gap:18px;row-gap:12px;}
+    .math-line{flex-direction:column;align-items:flex-start;gap:14px;}
+    .math-line .arrow{transform:rotate(90deg);transform-origin:center;width:fit-content;margin-left:10px;}
+    .stats{gap:40px;}
+    .fork-card{padding:34px 26px;}
+  }
+
+  /* Inner pages */
+  .price-list{list-style:none;max-width:760px;}
+  .price-list li{padding:26px 0;border-top:2px solid rgba(244,236,216,0.25);font-size:18px;}
+  .price-list li:last-child{border-bottom:2px solid rgba(244,236,216,0.25);}
+  .price-list .letter{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:34px;padding-right:14px;}
+  .cream .price-list li{border-color:rgba(26,54,93,0.25);}
+  .ladder{counter-reset:rung;list-style:none;max-width:760px;}
+  .ladder li{padding:30px 0;border-top:2px solid rgba(244,236,216,0.25);}
+  .ladder li:last-child{border-bottom:2px solid rgba(244,236,216,0.25);}
+  .ladder h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:29px;margin-bottom:8px;line-height:1.15;}
+  .ladder p{font-size:18px;margin-bottom:10px;}
+  .about-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:center;}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr;}}
+  .convictions{list-style:none;max-width:760px;}
+  .convictions li{padding:24px 0;border-top:2px solid rgba(26,54,93,0.25);font-size:19px;}
+  .convictions li:last-child{border-bottom:2px solid rgba(26,54,93,0.25);}
+  .convictions .n{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:32px;padding-right:16px;}
+  .closing-line{margin-top:44px;font-size:18px;}
+  .page-hero{padding:100px 0 110px;}
+  .page-hero h1{max-width:860px;margin-bottom:30px;}
+  .page-hero .sub{font-size:21px;max-width:640px;}
+  @media(max-width:600px){.page-hero{padding:72px 0 84px;}}
+</style>
+</head>
+<body>
+<div class="navy">
+  <nav>
+    <div class="wrap">
+      <a class="wordmark" href="index.html">William Ringsdorf</a>
+      <div class="navlinks">
+        <a href="start.html">Start here</a>
+        <a href="about.html">About</a>
+        <a href="work.html">Work with William</a>
+        <a href="articles.html">Articles</a>
+        <a class="btn" href="book.html">Book a call</a>
+      </div>
+    </div>
+  </nav>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Work with William</p>
+      <h1>Strategy for practices that are busy but not profitable</h1>
+      <p class="sub">For principal-led practices of 3 to 15 people. Full order books, good work going out the door, and margins that never quite reflect either.</p>
+    </div>
+  </section>
+</div>
+
+<div class="cream">
+  <section>
+    <div class="wrap">
+      <h2>The pattern</h2>
+      <p class="bigp">The projects are good. The team is stretched. The fees were set some years ago and nudged since. Scope creeps 17 to 22 per cent on a typical project and only around a quarter of it is ever billed. The principal <span class="accent">carries the numbers alone</span>, usually at night. If that reads like your practice, the three ways of working below exist for exactly this.</p>
+    </div>
+  </section>
+</div>
+
+<div class="navy">
+  <section>
+    <div class="wrap">
+      <h2>Three ways of working</h2>
+      <ul class="ladder">
+        <li>
+          <h3>VIP Strategy Day, <span class="accent">£1,500&nbsp;+&nbsp;VAT</span></h3>
+          <p>Four hours, 1:1, on Zoom. A pre-session diagnostic before the day, a custom roadmap by the end of it, the recording to keep, and 30 days of follow-up. For principals who cannot wait a quarter for answers.</p>
+          <a class="textlink" href="strategy-day.html">The Strategy Day</a>
+        </li>
+        <li>
+          <h3>12-Week Sprint, £1,999&nbsp;+&nbsp;VAT</h3>
+          <p>Cohort-based implementation, capped at ten practices, application only. Weekly group calls, 1:1 onboarding. Carries an outcome guarantee: a defined profit uplift or ten hours a month reclaimed by week twelve, or the work continues at no further charge.</p>
+          <a class="textlink" href="sprint.html">About the Sprint</a>
+        </li>
+        <li>
+          <h3>Elite Retainer, £2,500 a month&nbsp;+&nbsp;VAT</h3>
+          <p>Ongoing 1:1 for principals who want a strategist alongside the practice, month after month. Confidential by default; your clients and competitors never know.</p>
+          <a class="textlink" href="#">Enquire</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div class="cream">
+  <section>
+    <div class="wrap">
+      <h2>Every engagement starts the same way</h2>
+      <p class="bigp" style="margin-bottom:42px;">One diagnostic conversation about your practice: where the margin leaks, what would change first, and which way of working fits, if any does. The diagnosis is yours to keep either way.</p>
+      <a class="btn" href="book.html">Book a call</a>
+      <p class="closing-line">Not at the team stage yet? <a href="start.html">Start here instead.</a></p>
+    </div>
+  </section>
+</div>
+<div class="cream">
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="start.html">Start here</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work with William</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Tools and training</h4>
+          <ul>
+            <li><a href="https://designprofit.co.uk/fee-audit">Fee Confidence Audit</a></li>
+            <li><a href="https://designprofit.co.uk/apa">Free 20-minute training</a></li>
+            <li><a href="https://designprofit.co.uk/apa">The Architect's Profit Accelerator</a></li>
+            <li><a href="profit-guide.html">Free Profit Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="refunds.html">Refunds</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="bioline">William Ringsdorf · 30+ years in UK and German architectural practice</p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
