@@ -4,14 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Accessibility · William Ringsdorf</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Syne:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2');}
+  @font-face{font-family:'Syne';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/syne-latin-400-normal.woff2') format('woff2');}
+  @font-face{font-family:'Syne';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/syne-latin-500-normal.woff2') format('woff2');}
+</style>
 <style>
   :root{
     --navy:#1A365D;
     --cream:#F4ECD8;
-    --orange:#C7522A;
+    --orange:#B04824;
     --teal:#2A9D8F;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -34,7 +36,7 @@
   .navlinks{display:flex;align-items:center;gap:30px;flex-wrap:wrap;}
   .navlinks a{font-size:16px;font-weight:500;text-decoration:none;}
   .btn{display:inline-block;background:var(--orange);color:var(--cream);font-family:'Syne',sans-serif;font-weight:500;font-size:17px;text-decoration:none;padding:15px 32px;border:none;cursor:pointer;}
-  .btn:hover{background:#B04824;}
+  .btn:hover{background:#9A3E1F;}
 
   /* Hero */
   .hero{padding:130px 0 140px;}
@@ -56,7 +58,7 @@
 
   /* Reframe */
   .accent{color:var(--orange);}
-  .navy .accent{color:#E07B54;}
+  .navy .accent{color:#E8906E;}
   .bigp{font-size:21px;}
 
   /* Brutal math */
@@ -173,9 +175,9 @@
         <h3>The commitment</h3>
         <p>This site should be usable by everyone, including people using screen readers, keyboard navigation, or magnification.</p>
         <h3>How the site is built</h3>
-        <p>Semantic HTML with a proper heading structure, text that scales with browser settings, no motion effects, and image descriptions on meaningful images. An automated WCAG 2.2 AA check (axe-core) was run across every page on 4 September 2026 and found no structural, labelling or navigation issues. No formal manual audit has yet been carried out.</p>
+        <p>Semantic HTML with a proper heading structure, text that scales with browser settings, no motion effects, and image descriptions on meaningful images. An automated WCAG 2.2 AA check (axe-core) was run across every page on 4 September 2026 and found no structural, labelling or navigation issues; the one shortfall it did find, the contrast of the orange buttons and accent text, was corrected the same day and now meets the AA ratio. No formal manual audit has yet been carried out.</p>
         <h3>Known limits</h3>
-        <p>The colour contrast of the orange buttons and orange accent phrases falls short of the WCAG AA ratio and is under review. The booking calendar and forms are provided by a third party (GoHighLevel) and their accessibility is theirs to maintain; problems there are still worth reporting to us so they can be raised.</p>
+        <p>The booking calendar and forms are provided by a third party (GoHighLevel) and their accessibility is theirs to maintain; problems there are still worth reporting to us so they can be raised.</p>
         <h3>Feedback</h3>
         <p>Anything hard to use on this site is worth telling us about via the contact page. It gets fixed or answered, not filed.</p>
       </div>
