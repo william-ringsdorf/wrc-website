@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waiting on planning is not free. Here is what it costs your practice. &middot; William Ringsdorf</title>
+<style>
+  @font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2');}
+  @font-face{font-family:'Syne';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/syne-latin-400-normal.woff2') format('woff2');}
+  @font-face{font-family:'Syne';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/syne-latin-500-normal.woff2') format('woff2');}
+</style>
+<style>
+  :root{
+    --navy:#1A365D;
+    --cream:#F4ECD8;
+    --orange:#B04824;
+    --teal:#2A9D8F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Syne',sans-serif;font-weight:400;font-size:19px;line-height:1.65;color:var(--navy);background:var(--cream);}
+  .navy{background:var(--navy);color:var(--cream);}
+  .cream{background:var(--cream);color:var(--navy);}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  section{padding:110px 0;}
+  h1,h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-style:normal;line-height:1.08;}
+  h1{font-size:clamp(44px,6.4vw,76px);letter-spacing:-0.5px;}
+  h2{font-size:clamp(34px,4.2vw,54px);margin-bottom:34px;}
+  p{max-width:680px;}
+  a{color:inherit;}
+
+  /* Navigation */
+  nav{padding:26px 0;}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .wordmark{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;text-decoration:none;}
+  .navlinks{display:flex;align-items:center;gap:30px;flex-wrap:wrap;}
+  .navlinks a{font-size:16px;font-weight:500;text-decoration:none;}
+  .btn{display:inline-block;background:var(--orange);color:var(--cream);font-family:'Syne',sans-serif;font-weight:500;font-size:17px;text-decoration:none;padding:15px 32px;border:none;cursor:pointer;}
+  .btn:hover{background:#9A3E1F;}
+
+  /* Hero */
+  .hero{padding:130px 0 140px;}
+  .eyebrow{font-size:16px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:30px;}
+  .hero h1{max-width:900px;margin-bottom:36px;}
+  .hero .sub{font-size:21px;max-width:640px;margin-bottom:44px;}
+  .hero .actions{display:flex;align-items:center;gap:34px;flex-wrap:wrap;}
+  .textlink{font-weight:500;font-size:17px;text-decoration:underline;text-underline-offset:5px;}
+  .marked{position:relative;display:inline-block;}
+  .marked svg{position:absolute;left:0;bottom:-10px;width:100%;height:18px;}
+
+  /* Fork */
+  .fork-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:14px;}
+  @media(max-width:820px){.fork-grid{grid-template-columns:1fr;}}
+  .fork-card{border:2px solid var(--navy);padding:44px 40px;}
+  .fork-card h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:31px;margin-bottom:16px;line-height:1.15;}
+  .fork-card p{margin-bottom:26px;font-size:18px;}
+  .intro{font-size:21px;margin-bottom:38px;}
+
+  /* Reframe */
+  .accent{color:var(--orange);}
+  .navy .accent{color:#E8906E;}
+  .bigp{font-size:21px;}
+
+  /* Brutal math */
+  .math-line{display:flex;align-items:baseline;gap:26px;flex-wrap:wrap;margin:10px 0 44px;}
+  .math-line .state{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,4.4vw,58px);line-height:1.15;}
+  .math-line .arrow{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,4.4vw,58px);color:var(--orange);}
+  .math-line .small{display:block;font-family:'Syne',sans-serif;font-weight:500;font-size:16px;margin-top:8px;}
+
+  /* Story */
+  .story-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start;}
+  @media(max-width:820px){.story-grid{grid-template-columns:1fr;}}
+  .portrait{width:100%;height:auto;display:block;}
+  .stats{display:flex;gap:64px;flex-wrap:wrap;margin-top:56px;}
+  .stat .num{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:58px;line-height:1;}
+  .stat .label{display:block;font-size:16px;font-weight:500;margin-top:10px;}
+
+  /* Offers */
+  .offer{border-top:2px solid var(--navy);padding:44px 0;display:grid;grid-template-columns:1.1fr 2fr auto;gap:30px;align-items:start;}
+  @media(max-width:820px){.offer{grid-template-columns:1fr;gap:14px;}}
+  .offer:last-of-type{border-bottom:2px solid var(--navy);}
+  .offer h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:32px;line-height:1.12;}
+  .offer .price{display:block;font-family:'Syne',sans-serif;font-weight:500;font-size:18px;margin-top:10px;}
+  .offer p{font-size:18px;}
+  .offer .textlink{white-space:nowrap;margin-top:6px;}
+  .downladder{margin-top:44px;font-size:18px;}
+
+  /* Call */
+  .call p{margin-bottom:42px;}
+
+  /* Footer */
+  footer{padding:80px 0 60px;}
+  .foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:56px;}
+  @media(max-width:820px){.foot-grid{grid-template-columns:1fr;}}
+  footer h4{font-family:'Syne',sans-serif;font-weight:500;font-size:15px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;}
+  footer li a{font-size:17px;text-decoration:none;}
+  footer li a:hover{text-decoration:underline;}
+  .bioline{border-top:2px solid var(--navy);padding-top:28px;font-size:16px;font-weight:500;}
+
+  /* Mobile refinements */
+  @media(max-width:600px){
+    section{padding:72px 0;}
+    .hero{padding:84px 0 96px;}
+    nav .wrap{justify-content:center;text-align:center;}
+    .navlinks{justify-content:center;gap:18px;row-gap:12px;}
+    .math-line{flex-direction:column;align-items:flex-start;gap:14px;}
+    .math-line .arrow{transform:rotate(90deg);transform-origin:center;width:fit-content;margin-left:10px;}
+    .stats{gap:40px;}
+    .fork-card{padding:34px 26px;}
+  }
+
+  .price-list{list-style:none;max-width:760px;}
+  .ladder{list-style:none;max-width:760px;}
+  .ladder li{padding:30px 0;border-top:2px solid rgba(244,236,216,0.25);}
+  .ladder li:last-child{border-bottom:2px solid rgba(244,236,216,0.25);}
+  .cream .ladder li{border-color:rgba(26,54,93,0.25);}
+  .ladder h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:29px;margin-bottom:8px;line-height:1.15;}
+  .ladder p{font-size:18px;margin-bottom:10px;}
+  .numbered{list-style:none;max-width:760px;}
+  .numbered li{display:grid;grid-template-columns:70px 1fr;gap:22px;align-items:start;padding:26px 0;border-top:2px solid rgba(244,236,216,0.25);}
+  .numbered li:last-child{border-bottom:2px solid rgba(244,236,216,0.25);}
+  .cream .numbered li{border-color:rgba(26,54,93,0.25);}
+  .numbered .n{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:52px;line-height:1;}
+  .numbered h3{font-family:'Syne',sans-serif;font-weight:500;font-size:20px;margin-bottom:6px;}
+  .numbered p{font-size:18px;}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:44px;max-width:900px;}
+  @media(max-width:820px){.twocol{grid-template-columns:1fr;}}
+  .twocol h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:28px;margin-bottom:14px;}
+  .twocol p{font-size:18px;}
+  .page-hero{padding:100px 0 110px;}
+  .page-hero h1{max-width:880px;margin-bottom:30px;}
+  .page-hero .sub{font-size:21px;max-width:640px;margin-bottom:40px;}
+  @media(max-width:600px){.page-hero{padding:72px 0 84px;}}
+  .formfield{max-width:640px;margin-bottom:26px;}
+  .formfield label{display:block;font-weight:500;font-size:17px;margin-bottom:10px;}
+  .formfield .opts{display:flex;gap:12px;flex-wrap:wrap;}
+  .formfield .opt{border:2px solid var(--navy);padding:10px 18px;font-size:16px;}
+  .formfield input[type=text]{width:100%;border:2px solid var(--navy);background:transparent;padding:14px;font-family:'Syne',sans-serif;font-size:17px;color:var(--navy);}
+  .cal-placeholder{border:2px solid var(--navy);max-width:640px;padding:70px 40px;text-align:center;font-weight:500;font-size:17px;margin-top:20px;}
+  .fieldnote{font-size:16px;max-width:640px;}
+
+  .draft-note{background:var(--orange);color:var(--cream);font-weight:500;font-size:16px;padding:12px 0;text-align:center;}
+  .legal-body{max-width:720px;}
+  .legal-body h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:28px;margin:40px 0 14px;}
+  .legal-body p, .legal-body li{font-size:18px;}
+  .legal-body ul{padding-left:22px;margin:10px 0;}
+  .confirm{color:var(--orange);font-weight:500;}
+</style>
+</head>
+<body>
+<div class="navy">
+  <nav>
+    <div class="wrap">
+      <a class="wordmark" href="index.html">William Ringsdorf</a>
+      <div class="navlinks">
+        <a href="start.html">Start here</a>
+        <a href="about.html">About</a>
+        <a href="work.html">Work with William</a>
+        <a href="articles.html">Articles</a>
+        <a class="btn" href="book.html">Book a call</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Articles</p>
+      <h1>Waiting on planning is not free. Here is what it costs your practice.</h1>
+      <p class="sub">RIBA's own delay figures, and three ways to price for a system you do not control.</p>
+    </div>
+  </section>
+</div>
+<div class="cream">
+  <section>
+    <div class="wrap">
+      <p class="fieldnote">By William Ringsdorf &middot; 7 September 2026</p>
+      <div class="stats" style="margin:36px 0 8px;"><div class="stat"><span class="num">79%</span><span class="label">of practices had a planning delay</span></div><div class="stat"><span class="num">34%</span><span class="label">of those ran six months or longer</span></div></div>
+      <div class="legal-body" style="margin-top:40px;">
+        <p>79% of UK practices had a project delayed by a local authority planning department in the last quarter. Not "affected". Delayed. A third of those delays ran six months or longer. 8% ended in an abandoned project.</p>
+<p>Those numbers are from RIBA's own Future Trends survey, published in August. They are not a story about a difficult year. They are the current, ordinary weather of running a practice in England, and almost nobody prices for weather.</p>
+<h3>The workload is up. The waiting is up more.</h3>
+<p>RIBA's workload index for July stood at +4, recovering from -1 in June. On paper, that is good news: more practices reporting rising workload than falling. Read past the index and the same report says project progress "continues to be hindered, often very significantly."</p>
+<p>The two things are not in tension. Work is coming in. It is also getting stuck, for longer, in more places, than it used to.</p>
+<p>Planning applications are the biggest source. 79% of practices had at least one project delayed by a local authority in the last three months: 22% by up to a month, 43% by one to six months, 34% by six months or more, and 8% abandoned outright.</p>
+<p>Biodiversity Net Gain adds a second queue. Among the 69% of practices for whom it applies, 72% had a project delayed because of it, more than a third of those for six months or longer.</p>
+<p>For the quarter of practices dealing with an HRB Gateway 2 submission under the Building Safety Act, the picture is worse again: 49% delayed, and more than half of those delays ran six months or longer.</p>
+<p>Run those together on a single project and it is entirely plausible to be waiting on three separate clocks at once, none of which you control, all of which the client is watching.</p>
+<h3>The fee was priced for a different profession</h3>
+<p>Most fee proposals still assume a shape that has been quietly out of date for a while: agree the brief, design it, submit it, get a decision in eight to thirteen weeks, move on. The fee for each stage is costed against that shape, roughly, because roughly was close enough for a long time.</p>
+<p>It stopped being close enough somewhere in the last two or three years, and 2026's numbers confirm why. A project delayed six months is not the same project arriving six months late. It is a live commission that a smaller team, or the same team stretched thinner, has to keep answering emails on, keep informed, keep confident, for two full extra quarters, before the next fee stage is triggered by anything happening.</p>
+<p>That time was never in the original quote. Nobody sat down and estimated six months of holding a client's hand through a Biodiversity Net Gain resubmission, because six months ago that was not yet the ordinary case.</p>
+<h3>What waiting actually costs</h3>
+<p>Take the canonical numbers and run them against a delay rather than a change of mind, because the mechanism is the same even though the trigger is different.</p>
+<p>A project quoted at £5,000 for the early stages costs £6,480 once every extra site visit, resubmission and revision the client asks for is counted properly: a £1,480 loss on work everyone agreed went well. That example is usually told as a story about scope creep, "can you just?", a request creeping past what was agreed. A planning delay produces the identical shape of loss through a different door. Instead of extra drawing requests, it is: the pre-application meeting that has to be repeated because the officer changed; the BNG metric recalculated because the baseline data was queried; the client call every six weeks to explain that nothing has moved because nothing has moved; the resubmission the case officer asked for after five months of silence.</p>
+<p>None of that is billed, because none of it was ever named as a deliverable. It sits inside a lump sum or a percentage fee that was built assuming the clock ran at a normal speed, and it is the same 17 to 22% of project work that runs outside the original scope, of which only about a quarter is ever compensated. Delay is scope creep wearing a different coat. It gets missed for the same reason: nobody wrote it into the fee because nobody named it as work.</p>
+<h3>Whose risk is this, really</h3>
+<p>Ask most architects who bears the cost of a six-month planning delay, and the honest answer is: the practice does, informally, in unbilled hours, while the client bears it formally, in a project that opens later than hoped. That split is backwards. The client chose the site, the brief and, often, the level of planning risk. The practice absorbs the consequence for free.</p>
+<p>It wasn't your fault, and it isn't inefficiency either. Architecture school taught almost everything except how to price for a system outside your control, and the professional bodies that once gave fee guidance have not replaced it with delay guidance. The gap sits exactly where the RIBA numbers now sit: in the six months between submission and decision, when a fee agreed at the brief stage is being spent on holding a project together.</p>
+<h3>Building it into the fee, not around it</h3>
+<p>Fees are not a negotiation; they are a calculation, and a delay clause is not a defensive add-on, it is simply completing the calculation with the risk that 2026's data says is now ordinary rather than exceptional.</p>
+<p>Three places to start, before the next planning application goes in.</p>
+<p><strong>Name the planning-hold service.</strong> If a decision runs past the statutory period, and it now does for the majority of projects, define what continued engagement during that hold actually is: monthly written updates, one client call per month, one resubmission included, further resubmissions or major redesign as an additional fee. Put a number of months against the included service before the additional fee starts. Most practices have never written this down, which is why it is never charged.</p>
+<p><strong>Separate BNG and Gateway work from planning as their own named stages.</strong> They are not variations on planning; they are their own workstreams with their own metrics, their own consultees and, per RIBA's own figures, their own timelines running to six months or more in a large minority of cases. A stage that is not named is a stage that does not get invoiced.</p>
+<p><strong>Tell the client the real number, at the start, not the hopeful one.</strong> 79% is not a scare figure; it is this year's ordinary outcome. A client who hears "most local authority decisions are running past the statutory period at the moment, and here is what our fee covers if that happens on your project" is being told the truth before it costs them anything, and a practice that says this before a delay lands is in a completely different negotiating position than one explaining it, apologetically, in month seven.</p>
+<p>None of this requires optimism about planning departments improving. It requires pricing the profession that actually exists this year, not the one the fee structure was inherited from.</p>
+<h3>A worked example</h3>
+<p>A single-storey side extension. RIBA Stages 1 to 3 quoted at £3,200, planning application submitted in week nine, decision expected in eight weeks under the statutory period.</p>
+<p>Week fourteen: the case officer requests a Biodiversity Net Gain metric calculation, which was not part of the original brief because the client's agent had said it would not apply. It does. Two days of work, unbilled, because nobody had named "checking whether BNG applies" as a fee item.</p>
+<p>Week nineteen: still no decision. The client calls, worried. Twenty minutes, unbilled, because "reassuring the client that silence is normal" was never a line item either.</p>
+<p>Week twenty-six: the officer asks for a resubmission on a boundary treatment point that has nothing to do with the design merits and everything to do with a neighbour's objection. A day and a half of redrawing and a second submission fee, both unbilled, because the fee assumed one submission.</p>
+<p>Week thirty-one: consent granted. Total unbilled time across five months: roughly three and a half days, at a fair hourly rate, somewhere in the region of £900 to £1,100. On a £3,200 fee, that is close to a third of it, gone, on a project that a stage table somewhere still calls "on track", because it eventually was.</p>
+<p>None of the client's requests were unreasonable. None of the officer's were either. The fee simply never priced for either of them, because it was built for a version of planning that decided things in eight weeks rather than thirty-one.</p>
+<h3>When the client asks why a delay clause is even in the proposal</h3>
+<p>Some clients will query it. "Why would I pay for something that hasn't happened yet?" The answer is the same shape as the answer to any fee question: because the work it covers is real, whether or not the trigger for it ever arrives.</p>
+<p>A useful comparison is the one most clients already understand: a builder's contract contingency for ground conditions that turn out to be fine. Nobody calls that padding. It is priced because the risk exists on enough projects that leaving it out would be dishonest about what the job actually involves this year. A planning-hold clause is the design-side equivalent of the same idea, and the RIBA numbers above are the ground conditions survey: on four projects in five, some version of this cost is coming.</p>
+<p>Say what the clause buys them directly. Not protection from planning being slow, which nobody can sell. Protection from silence: a defined number of updates, a named point of contact, a clear line between what is included and what triggers an extra fee, agreed now rather than negotiated awkwardly in month seven when goodwill on both sides is thinner. Most clients, told plainly, prefer certainty about a cost to uncertainty about whether the practice will simply absorb it, resent it, and let the relationship show the strain.</p>
+<p>If a client still pushes back, the honest fallback is Resistance Protocol rather than concession: state the number once, explain what it is for, and let the silence sit. A fee built on real numbers does not need defending twice.</p>
+<h3>Where to start</h3>
+<p>If you want to see where your own fee structure is silently absorbing this kind of unbilled time, the <a class="textlink" href="https://designprofit.co.uk/fee-audit">Fee Confidence Audit</a> is built to surface exactly that: 21 questions across six areas, about 12 minutes, scored out of 100, with a written report on where the leak is. It costs £37. The <a class="textlink" href="https://williamringsdorf.com/profit-guide.html">Profit Guide</a> is free and covers the underlying cost-rate calculation that any delay clause needs to be built on.</p>
+<p>The planning system is not going to speed up because your fee proposal assumes it will. Price the wait, or keep paying for it yourself.</p>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="navy">
+  <section class="call">
+    <div class="wrap">
+      <h2>Where to start</h2>
+      <p class="bigp">If you want to see where your own fees are leaking, the <a class="textlink accent" href="https://designprofit.co.uk/fee-audit">Fee Confidence Audit</a> takes about 12 minutes and costs &pound;37. If you would rather start with the reading, the <a class="textlink accent" href="https://williamringsdorf.com/profit-guide.html">Profit Guide</a> is free.</p>
+      
+      <p style="margin-top:40px;"><a class="textlink accent" href="articles.html">Back to Articles</a></p>
+    </div>
+  </section>
+</div>
+<div class="cream">
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="start.html">Start here</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work with William</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Tools and training</h4>
+          <ul>
+            <li><a href="https://designprofit.co.uk/fee-audit">Fee Confidence Audit</a></li>
+            <li><a href="https://designprofit.co.uk/apa">Free 20-minute training</a></li>
+            <li><a href="https://designprofit.co.uk/apa">The Architect's Profit Accelerator</a></li>
+            <li><a href="profit-guide.html">Free Profit Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="refunds.html">Refunds</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="bioline">William Ringsdorf &middot; 30+ years in UK and German architectural practice</p>
+    </div>
+  </footer>
+</div>
+
+</body>
+      </html>
