@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The profession made &pound;5bn last year. Sole practitioners made &pound;55,859. &middot; William Ringsdorf</title>
+<style>
+  @font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2');}
+  @font-face{font-family:'Syne';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/syne-latin-400-normal.woff2') format('woff2');}
+  @font-face{font-family:'Syne';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/syne-latin-500-normal.woff2') format('woff2');}
+</style>
+<style>
+  :root{
+    --navy:#1A365D;
+    --cream:#F4ECD8;
+    --orange:#B04824;
+    --teal:#2A9D8F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Syne',sans-serif;font-weight:400;font-size:19px;line-height:1.65;color:var(--navy);background:var(--cream);}
+  .navy{background:var(--navy);color:var(--cream);}
+  .cream{background:var(--cream);color:var(--navy);}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  section{padding:110px 0;}
+  h1,h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-style:normal;line-height:1.08;}
+  h1{font-size:clamp(44px,6.4vw,76px);letter-spacing:-0.5px;}
+  h2{font-size:clamp(34px,4.2vw,54px);margin-bottom:34px;}
+  p{max-width:680px;}
+  a{color:inherit;}
+
+  /* Navigation */
+  nav{padding:26px 0;}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .wordmark{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;text-decoration:none;}
+  .navlinks{display:flex;align-items:center;gap:30px;flex-wrap:wrap;}
+  .navlinks a{font-size:16px;font-weight:500;text-decoration:none;}
+  .btn{display:inline-block;background:var(--orange);color:var(--cream);font-family:'Syne',sans-serif;font-weight:500;font-size:17px;text-decoration:none;padding:15px 32px;border:none;cursor:pointer;}
+  .btn:hover{background:#9A3E1F;}
+
+  /* Hero */
+  .hero{padding:130px 0 140px;}
+  .eyebrow{font-size:16px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:30px;}
+  .hero h1{max-width:900px;margin-bottom:36px;}
+  .hero .sub{font-size:21px;max-width:640px;margin-bottom:44px;}
+  .hero .actions{display:flex;align-items:center;gap:34px;flex-wrap:wrap;}
+  .textlink{font-weight:500;font-size:17px;text-decoration:underline;text-underline-offset:5px;}
+  .marked{position:relative;display:inline-block;}
+  .marked svg{position:absolute;left:0;bottom:-10px;width:100%;height:18px;}
+
+  /* Fork */
+  .fork-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:14px;}
+  @media(max-width:820px){.fork-grid{grid-template-columns:1fr;}}
+  .fork-card{border:2px solid var(--navy);padding:44px 40px;}
+  .fork-card h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:31px;margin-bottom:16px;line-height:1.15;}
+  .fork-card p{margin-bottom:26px;font-size:18px;}
+  .intro{font-size:21px;margin-bottom:38px;}
+
+  /* Reframe */
+  .accent{color:var(--orange);}
+  .navy .accent{color:#E8906E;}
+  .bigp{font-size:21px;}
+
+  /* Brutal math */
+  .math-line{display:flex;align-items:baseline;gap:26px;flex-wrap:wrap;margin:10px 0 44px;}
+  .math-line .state{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,4.4vw,58px);line-height:1.15;}
+  .math-line .arrow{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,4.4vw,58px);color:var(--orange);}
+  .math-line .small{display:block;font-family:'Syne',sans-serif;font-weight:500;font-size:16px;margin-top:8px;}
+
+  /* Story */
+  .story-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start;}
+  @media(max-width:820px){.story-grid{grid-template-columns:1fr;}}
+  .portrait{width:100%;height:auto;display:block;}
+  .stats{display:flex;gap:64px;flex-wrap:wrap;margin-top:56px;}
+  .stat .num{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:58px;line-height:1;}
+  .stat .label{display:block;font-size:16px;font-weight:500;margin-top:10px;}
+
+  /* Offers */
+  .offer{border-top:2px solid var(--navy);padding:44px 0;display:grid;grid-template-columns:1.1fr 2fr auto;gap:30px;align-items:start;}
+  @media(max-width:820px){.offer{grid-template-columns:1fr;gap:14px;}}
+  .offer:last-of-type{border-bottom:2px solid var(--navy);}
+  .offer h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:32px;line-height:1.12;}
+  .offer .price{display:block;font-family:'Syne',sans-serif;font-weight:500;font-size:18px;margin-top:10px;}
+  .offer p{font-size:18px;}
+  .offer .textlink{white-space:nowrap;margin-top:6px;}
+  .downladder{margin-top:44px;font-size:18px;}
+
+  /* Call */
+  .call p{margin-bottom:42px;}
+
+  /* Footer */
+  footer{padding:80px 0 60px;}
+  .foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:56px;}
+  @media(max-width:820px){.foot-grid{grid-template-columns:1fr;}}
+  footer h4{font-family:'Syne',sans-serif;font-weight:500;font-size:15px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;}
+  footer li a{font-size:17px;text-decoration:none;}
+  footer li a:hover{text-decoration:underline;}
+  .bioline{border-top:2px solid var(--navy);padding-top:28px;font-size:16px;font-weight:500;}
+
+  /* Mobile refinements */
+  @media(max-width:600px){
+    section{padding:72px 0;}
+    .hero{padding:84px 0 96px;}
+    nav .wrap{justify-content:center;text-align:center;}
+    .navlinks{justify-content:center;gap:18px;row-gap:12px;}
+    .math-line{flex-direction:column;align-items:flex-start;gap:14px;}
+    .math-line .arrow{transform:rotate(90deg);transform-origin:center;width:fit-content;margin-left:10px;}
+    .stats{gap:40px;}
+    .fork-card{padding:34px 26px;}
+  }
+
+  .price-list{list-style:none;max-width:760px;}
+  .ladder{list-style:none;max-width:760px;}
+  .ladder li{padding:30px 0;border-top:2px solid rgba(244,236,216,0.25);}
+  .ladder li:last-child{border-bottom:2px solid rgba(244,236,216,0.25);}
+  .cream .ladder li{border-color:rgba(26,54,93,0.25);}
+  .ladder h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:29px;margin-bottom:8px;line-height:1.15;}
+  .ladder p{font-size:18px;margin-bottom:10px;}
+  .numbered{list-style:none;max-width:760px;}
+  .numbered li{display:grid;grid-template-columns:70px 1fr;gap:22px;align-items:start;padding:26px 0;border-top:2px solid rgba(244,236,216,0.25);}
+  .numbered li:last-child{border-bottom:2px solid rgba(244,236,216,0.25);}
+  .cream .numbered li{border-color:rgba(26,54,93,0.25);}
+  .numbered .n{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:52px;line-height:1;}
+  .numbered h3{font-family:'Syne',sans-serif;font-weight:500;font-size:20px;margin-bottom:6px;}
+  .numbered p{font-size:18px;}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:44px;max-width:900px;}
+  @media(max-width:820px){.twocol{grid-template-columns:1fr;}}
+  .twocol h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:28px;margin-bottom:14px;}
+  .twocol p{font-size:18px;}
+  .page-hero{padding:100px 0 110px;}
+  .page-hero h1{max-width:880px;margin-bottom:30px;}
+  .page-hero .sub{font-size:21px;max-width:640px;margin-bottom:40px;}
+  @media(max-width:600px){.page-hero{padding:72px 0 84px;}}
+  .formfield{max-width:640px;margin-bottom:26px;}
+  .formfield label{display:block;font-weight:500;font-size:17px;margin-bottom:10px;}
+  .formfield .opts{display:flex;gap:12px;flex-wrap:wrap;}
+  .formfield .opt{border:2px solid var(--navy);padding:10px 18px;font-size:16px;}
+  .formfield input[type=text]{width:100%;border:2px solid var(--navy);background:transparent;padding:14px;font-family:'Syne',sans-serif;font-size:17px;color:var(--navy);}
+  .cal-placeholder{border:2px solid var(--navy);max-width:640px;padding:70px 40px;text-align:center;font-weight:500;font-size:17px;margin-top:20px;}
+  .fieldnote{font-size:16px;max-width:640px;}
+
+  .draft-note{background:var(--orange);color:var(--cream);font-weight:500;font-size:16px;padding:12px 0;text-align:center;}
+  .legal-body{max-width:720px;}
+  .legal-body h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:28px;margin:40px 0 14px;}
+  .legal-body p, .legal-body li{font-size:18px;}
+  .legal-body ul{padding-left:22px;margin:10px 0;}
+  .confirm{color:var(--orange);font-weight:500;}
+</style>
+</head>
+<body>
+<div class="navy">
+  <nav>
+    <div class="wrap">
+      <a class="wordmark" href="index.html">William Ringsdorf</a>
+      <div class="navlinks">
+        <a href="start.html">Start here</a>
+        <a href="about.html">About</a>
+        <a href="work.html">Work with William</a>
+        <a href="articles.html">Articles</a>
+        <a class="btn" href="book.html">Book a call</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Articles</p>
+      <h1>The profession made &pound;5bn last year. Sole practitioners made &pound;55,859.</h1>
+      <p class="sub">What the RIBA Business Benchmarking figures actually show, and the calculation that closes the gap.</p>
+    </div>
+  </section>
+</div>
+<div class="cream">
+  <section>
+    <div class="wrap">
+      <p class="fieldnote">By William Ringsdorf &middot; 7 September 2026</p>
+      <div class="stats" style="margin:36px 0 8px;"><div class="stat"><span class="num">&pound;5bn</span><span class="label">UK practice revenue, 2025, up 24%</span></div><div class="stat"><span class="num">&pound;55,859</span><span class="label">average one-person practice revenue</span></div></div>
+      <div class="legal-body" style="margin-top:40px;">
+        <p>Two numbers came out of the same report in November.</p>
+<p>UK architecture practices turned over £5 billion in the year to May 2025. That is an all-time high, up 24% on the year before. The RIBA press release used the word "resilient".</p>
+<p>The same report gives the average revenue of a one-person practice: £55,859. Not profit. Revenue. Before software, insurance, the accountant, the car, the pension, and before the principal pays themselves anything at all.</p>
+<p>Both numbers are true. They describe different professions.</p>
+<h3>Where the £5bn went</h3>
+<p>The RIBA Business Benchmarking report is the one solid data set the profession has about its own finances, so it is worth reading the breakdown rather than the headline.</p>
+<p>Practices with 50 or more staff are 4% of all practices. They took 61% of the revenue.</p>
+<p>Practices with 1 to 9 staff are 78% of all practices. They took 13%.</p>
+<p>The growth came almost entirely from international work, which rose 67% in a year and now makes up 31% of the sector's income. Practices with 100 or more staff did 83% of it. If you run a practice from a spare room in Sheffield, none of that money passed anywhere near you.</p>
+<p>Small practices, 1 to 4 staff, reported flat revenue and falling profit. The one-person practice was the only size band whose revenue went down.</p>
+<p>So the sector is doing well, and the sector is 78% small practices that are not. Both statements hold. The average is doing the work of hiding one inside the other.</p>
+<h3>What £55,859 has to cover</h3>
+<p>Take the number at face value and run it.</p>
+<p>The same report puts the pay of a sole principal in a one-person practice at £31,600. That leaves £24,259 to run the practice for a year: professional indemnity, ARB and RIBA fees, software licences that now renew monthly, the laptop, the plotter, the phone, the accountant, the website, CPD, the bad debt nobody planned for, and the weeks between projects when there is no fee at all.</p>
+<p>£31,600 is what an experienced architect earns for being the whole practice. Design, planning, technical, contract admin, invoicing, credit control, marketing, IT support, and the person who answers the phone at 7pm.</p>
+<p>For comparison, RIBA's own benchmarking has put the average operating margin across UK practices at around 7% for years. Law firms and accountancy practices of comparable size run at 15 to 25%. They are not cleverer than architects. They price differently.</p>
+<h3>This is structural. It is not you.</h3>
+<p>We are trained to design, not to price. Architecture school teaches you almost everything except how to make money, and then the profession spends the next twenty years treating fee conversations as faintly embarrassing.</p>
+<p>Sole practitioners feel this hardest for one specific reason: there is no benchmark in the room. In a practice of eight people, someone has seen another firm's fee proposal. Someone remembers what the last job actually cost. A sole practitioner has their own last quote and a feeling. The feeling is usually "I should probably charge more", and the quote goes out unchanged, because the alternative is the client saying no.</p>
+<p>Nobody is exempt. Fourteen years running my own practice, and for most of them the fee was whatever number felt safe enough to win the job. It worked, in the sense that the work kept coming, right up to 2008, when my largest client defaulted on a major payment. A decade of work, nearly gone overnight. The practice that could not survive one bad debt was a practice that had never priced for the possibility of one. That was not bad luck. That was a pricing system with no margin in it, run by someone who loved the work more than he loved being paid for it.</p>
+<p>The number carries weight it should not have to carry. It stops being a calculation and starts being a statement about whether you deserve it. That is the part nobody taught either, and it is the part that keeps a £55,859 practice at £55,859.</p>
+<h3>The sole practitioner who published her fees</h3>
+<p>In July, a sole practitioner in the North East posted her practice's full fee schedule, RIBA Stages 0 to 6, on Instagram. Her reason was simple. When she started out she had no benchmark, undercharged for years, and did not want the next person to go through the same thing.</p>
+<p>The response was immediate and, from the trade press coverage, overwhelmingly one of relief. Not "how dare she". More "finally". A good number of the replies came from architects saying smaller practices need to raise their rates.</p>
+<p>That is the tell. The profession already knows. What it lacks is not the awareness; it is a number to stand next to, and permission to use it.</p>
+<p>You will not get that permission from a professional body. RIBA withdrew its fee guidance years ago and has said since that publishing recommended fee levels carries a legal risk, after a 2004 European Commission ruling against the Belgian architects' body for exactly that. The Benchmarking report tells you what practices earn, not what they should charge. The benchmark you can actually use is the one you build yourself: your own true cost, per hour, per project, before the next quote goes out.</p>
+<h3>The calculation most sole practitioners have never run</h3>
+<p>Ask an architect what their hourly rate is and most will say £60 to £80. Ask what it costs them to deliver an hour of work, once every non-billable hour, every overhead and every unpaid revision is counted, and the honest answer for many sole practitioners is £25 to £35. The gap between those two numbers is where the £55,859 comes from.</p>
+<p>Here is the canonical example, because it is the one I have watched play out more times than any other.</p>
+<p>A rear extension. The architect quotes £5,000, a number that feels about right for the local market and comfortably below what the client fears. Then the project happens. Two extra site visits. A planning re-submission after a neighbour objects. The kitchen layout redrawn three times because the client's sister had a view. A contractor who needs every detail explained twice.</p>
+<p>Counted properly, the project cost £6,480 to deliver. The invoice said £5,000. The practice lost £1,480, and the architect felt they had done a good job, which they had.</p>
+<p>Now put that against the industry figures on scope creep: 17 to 22% of the work on a typical project falls outside the original scope, and only about a quarter of it is ever billed. Multiply one rear extension by a year of projects and you have a practice that is busy, respected, and turning over £55,859.</p>
+<p>Fees are not a negotiation. They are a calculation. The calculation has three parts, and none of them requires a spreadsheet you have not already got.</p>
+<h3>Three numbers to find before your next quote</h3>
+<p><strong>1. Your real billable hours.</strong> Not 40 a week. Take the hours in a year, subtract holiday, subtract the time you spend on marketing, admin, CPD, invoicing, chasing invoices, and the site visit that turned into an hour of listening to a client's building regulations worries. Most sole practitioners land somewhere between 1,100 and 1,400 billable hours a year, and are shocked by it. (That range is drawn from practice experience, not from the RIBA data, so test it against your own diary rather than taking it on trust.)</p>
+<p><strong>2. Your real annual cost.</strong> Everything the practice spends, plus what you need to pay yourself to live and to save. Not what you happen to have been paying yourself. Put in the pension. Put in the weeks you will not be able to work.</p>
+<p><strong>3. Divide one by the other.</strong> Cost divided by billable hours is your break-even hourly rate. Anything you quote below it is a loss you have agreed to in advance. Add the margin a professional practice should earn, and you have a rate you can defend, because it is arithmetic rather than opinion.</p>
+<h3>When the client says another architect quoted less</h3>
+<p>The moment the new number meets a client is the moment most sole practitioners fold. "Another architect has quoted £3,500." The old reflex is to match it, or to shave £800 off and call it a discount. Both are the same decision: agreeing to fund the client's project out of your own pension.</p>
+<p>Run the arithmetic instead. If your break-even rate says the job costs £6,480 to deliver properly, then £3,500 is not a competing quote. It is a different service, one that will run out of hours at RIBA Stage 3 and finish on goodwill. Say so, plainly, without apology: here is what the fee covers, here is what happens at each stage, here is why it costs what it costs. Clients pay for judgement and outcomes, not for drawings, and most of them know it. Some will walk. The ones who stay are the ones whose projects do not lose you £1,480 each.</p>
+<p>This is not a confidence trick, and it does not require a personality change. It requires a number you trust more than you fear the silence after you say it.</p>
+<p>That is why the calculation comes first. Pricing Foundations is the first step of the PRICE Framework, and it is the step almost everyone skips. The other four (Resistance Protocol, Invoice Architecture, Cash Flow Clarity, Earnings First) deal with what happens once the number is right: how to hold it when a client pushes, how to invoice so the money arrives, how to see cash flow before it bites, and how to make sure the practice pays its principal before it pays everyone else. None of them work if the foundation number is a guess.</p>
+<h3>Not for practitioners who have made it</h3>
+<p>There is a reply I hear often from sole practitioners: "Hopefully in the future I'll have enough work to warrant looking at this properly."</p>
+<p>That has the order backwards. A pricing problem does not fix itself with volume. More work at £25 an hour is more hours at £25 an hour. The point of getting the number right is not to reward a practice that is already busy; it is to make sure the next quote, the one going out this week, does not quietly lose £1,480 before the drawings are started.</p>
+<p>If you suspect your fees are off and want to know by how much, the <a class="textlink" href="https://designprofit.co.uk/fee-audit">Fee Confidence Audit</a> is the fastest way to find out. 21 questions across six areas, about 12 minutes, scored out of 100, and a written report on where your practice is leaking profit. It costs £37.</p>
+<p>If you would rather start with the reading, the <a class="textlink" href="https://williamringsdorf.com/profit-guide.html">Profit Guide</a> is free and covers the break-even calculation above in full.</p>
+<p>The profession made £5 billion last year. Whether any of it reaches a one-person practice next year depends on a calculation that takes an afternoon.</p>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="navy">
+  <section class="call">
+    <div class="wrap">
+      <h2>Where to start</h2>
+      <p class="bigp">If you want to see where your own fees are leaking, the <a class="textlink accent" href="https://designprofit.co.uk/fee-audit">Fee Confidence Audit</a> takes about 12 minutes and costs &pound;37. If you would rather start with the reading, the <a class="textlink accent" href="https://williamringsdorf.com/profit-guide.html">Profit Guide</a> is free.</p>
+      
+      <p style="margin-top:40px;"><a class="textlink accent" href="articles.html">Back to Articles</a></p>
+    </div>
+  </section>
+</div>
+<div class="cream">
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="start.html">Start here</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work with William</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Tools and training</h4>
+          <ul>
+            <li><a href="https://designprofit.co.uk/fee-audit">Fee Confidence Audit</a></li>
+            <li><a href="https://designprofit.co.uk/apa">Free 20-minute training</a></li>
+            <li><a href="https://designprofit.co.uk/apa">The Architect's Profit Accelerator</a></li>
+            <li><a href="profit-guide.html">Free Profit Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="refunds.html">Refunds</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="bioline">William Ringsdorf &middot; 30+ years in UK and German architectural practice</p>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
