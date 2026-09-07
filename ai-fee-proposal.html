@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your client has noticed AI. Your fee proposal has not. &middot; William Ringsdorf</title>
+<style>
+  @font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2');}
+  @font-face{font-family:'Syne';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/syne-latin-400-normal.woff2') format('woff2');}
+  @font-face{font-family:'Syne';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/syne-latin-500-normal.woff2') format('woff2');}
+</style>
+<style>
+  :root{
+    --navy:#1A365D;
+    --cream:#F4ECD8;
+    --orange:#B04824;
+    --teal:#2A9D8F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Syne',sans-serif;font-weight:400;font-size:19px;line-height:1.65;color:var(--navy);background:var(--cream);}
+  .navy{background:var(--navy);color:var(--cream);}
+  .cream{background:var(--cream);color:var(--navy);}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  section{padding:110px 0;}
+  h1,h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-style:normal;line-height:1.08;}
+  h1{font-size:clamp(44px,6.4vw,76px);letter-spacing:-0.5px;}
+  h2{font-size:clamp(34px,4.2vw,54px);margin-bottom:34px;}
+  p{max-width:680px;}
+  a{color:inherit;}
+
+  /* Navigation */
+  nav{padding:26px 0;}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .wordmark{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;text-decoration:none;}
+  .navlinks{display:flex;align-items:center;gap:30px;flex-wrap:wrap;}
+  .navlinks a{font-size:16px;font-weight:500;text-decoration:none;}
+  .btn{display:inline-block;background:var(--orange);color:var(--cream);font-family:'Syne',sans-serif;font-weight:500;font-size:17px;text-decoration:none;padding:15px 32px;border:none;cursor:pointer;}
+  .btn:hover{background:#9A3E1F;}
+
+  /* Hero */
+  .hero{padding:130px 0 140px;}
+  .eyebrow{font-size:16px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:30px;}
+  .hero h1{max-width:900px;margin-bottom:36px;}
+  .hero .sub{font-size:21px;max-width:640px;margin-bottom:44px;}
+  .hero .actions{display:flex;align-items:center;gap:34px;flex-wrap:wrap;}
+  .textlink{font-weight:500;font-size:17px;text-decoration:underline;text-underline-offset:5px;}
+  .marked{position:relative;display:inline-block;}
+  .marked svg{position:absolute;left:0;bottom:-10px;width:100%;height:18px;}
+
+  /* Fork */
+  .fork-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:14px;}
+  @media(max-width:820px){.fork-grid{grid-template-columns:1fr;}}
+  .fork-card{border:2px solid var(--navy);padding:44px 40px;}
+  .fork-card h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:31px;margin-bottom:16px;line-height:1.15;}
+  .fork-card p{margin-bottom:26px;font-size:18px;}
+  .intro{font-size:21px;margin-bottom:38px;}
+
+  /* Reframe */
+  .accent{color:var(--orange);}
+  .navy .accent{color:#E8906E;}
+  .bigp{font-size:21px;}
+
+  /* Brutal math */
+  .math-line{display:flex;align-items:baseline;gap:26px;flex-wrap:wrap;margin:10px 0 44px;}
+  .math-line .state{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,4.4vw,58px);line-height:1.15;}
+  .math-line .arrow{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,4.4vw,58px);color:var(--orange);}
+  .math-line .small{display:block;font-family:'Syne',sans-serif;font-weight:500;font-size:16px;margin-top:8px;}
+
+  /* Story */
+  .story-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start;}
+  @media(max-width:820px){.story-grid{grid-template-columns:1fr;}}
+  .portrait{width:100%;height:auto;display:block;}
+  .stats{display:flex;gap:64px;flex-wrap:wrap;margin-top:56px;}
+  .stat .num{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:58px;line-height:1;}
+  .stat .label{display:block;font-size:16px;font-weight:500;margin-top:10px;}
+
+  /* Offers */
+  .offer{border-top:2px solid var(--navy);padding:44px 0;display:grid;grid-template-columns:1.1fr 2fr auto;gap:30px;align-items:start;}
+  @media(max-width:820px){.offer{grid-template-columns:1fr;gap:14px;}}
+  .offer:last-of-type{border-bottom:2px solid var(--navy);}
+  .offer h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:32px;line-height:1.12;}
+  .offer .price{display:block;font-family:'Syne',sans-serif;font-weight:500;font-size:18px;margin-top:10px;}
+  .offer p{font-size:18px;}
+  .offer .textlink{white-space:nowrap;margin-top:6px;}
+  .downladder{margin-top:44px;font-size:18px;}
+
+  /* Call */
+  .call p{margin-bottom:42px;}
+
+  /* Footer */
+  footer{padding:80px 0 60px;}
+  .foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:56px;}
+  @media(max-width:820px){.foot-grid{grid-template-columns:1fr;}}
+  footer h4{font-family:'Syne',sans-serif;font-weight:500;font-size:15px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;}
+  footer li a{font-size:17px;text-decoration:none;}
+  footer li a:hover{text-decoration:underline;}
+  .bioline{border-top:2px solid var(--navy);padding-top:28px;font-size:16px;font-weight:500;}
+
+  /* Mobile refinements */
+  @media(max-width:600px){
+    section{padding:72px 0;}
+    .hero{padding:84px 0 96px;}
+    nav .wrap{justify-content:center;text-align:center;}
+    .navlinks{justify-content:center;gap:18px;row-gap:12px;}
+    .math-line{flex-direction:column;align-items:flex-start;gap:14px;}
+    .math-line .arrow{transform:rotate(90deg);transform-origin:center;width:fit-content;margin-left:10px;}
+    .stats{gap:40px;}
+    .fork-card{padding:34px 26px;}
+  }
+
+  .price-list{list-style:none;max-width:760px;}
+  .ladder{list-style:none;max-width:760px;}
+  .ladder li{padding:30px 0;border-top:2px solid rgba(244,236,216,0.25);}
+  .ladder li:last-child{border-bottom:2px solid rgba(244,236,216,0.25);}
+  .cream .ladder li{border-color:rgba(26,54,93,0.25);}
+  .ladder h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:29px;margin-bottom:8px;line-height:1.15;}
+  .ladder p{font-size:18px;margin-bottom:10px;}
+  .numbered{list-style:none;max-width:760px;}
+  .numbered li{display:grid;grid-template-columns:70px 1fr;gap:22px;align-items:start;padding:26px 0;border-top:2px solid rgba(244,236,216,0.25);}
+  .numbered li:last-child{border-bottom:2px solid rgba(244,236,216,0.25);}
+  .cream .numbered li{border-color:rgba(26,54,93,0.25);}
+  .numbered .n{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:52px;line-height:1;}
+  .numbered h3{font-family:'Syne',sans-serif;font-weight:500;font-size:20px;margin-bottom:6px;}
+  .numbered p{font-size:18px;}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:44px;max-width:900px;}
+  @media(max-width:820px){.twocol{grid-template-columns:1fr;}}
+  .twocol h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:28px;margin-bottom:14px;}
+  .twocol p{font-size:18px;}
+  .page-hero{padding:100px 0 110px;}
+  .page-hero h1{max-width:880px;margin-bottom:30px;}
+  .page-hero .sub{font-size:21px;max-width:640px;margin-bottom:40px;}
+  @media(max-width:600px){.page-hero{padding:72px 0 84px;}}
+  .formfield{max-width:640px;margin-bottom:26px;}
+  .formfield label{display:block;font-weight:500;font-size:17px;margin-bottom:10px;}
+  .formfield .opts{display:flex;gap:12px;flex-wrap:wrap;}
+  .formfield .opt{border:2px solid var(--navy);padding:10px 18px;font-size:16px;}
+  .formfield input[type=text]{width:100%;border:2px solid var(--navy);background:transparent;padding:14px;font-family:'Syne',sans-serif;font-size:17px;color:var(--navy);}
+  .cal-placeholder{border:2px solid var(--navy);max-width:640px;padding:70px 40px;text-align:center;font-weight:500;font-size:17px;margin-top:20px;}
+  .fieldnote{font-size:16px;max-width:640px;}
+
+  .draft-note{background:var(--orange);color:var(--cream);font-weight:500;font-size:16px;padding:12px 0;text-align:center;}
+  .legal-body{max-width:720px;}
+  .legal-body h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:28px;margin:40px 0 14px;}
+  .legal-body p, .legal-body li{font-size:18px;}
+  .legal-body ul{padding-left:22px;margin:10px 0;}
+  .confirm{color:var(--orange);font-weight:500;}
+</style>
+</head>
+<body>
+<div class="navy">
+  <nav>
+    <div class="wrap">
+      <a class="wordmark" href="index.html">William Ringsdorf</a>
+      <div class="navlinks">
+        <a href="start.html">Start here</a>
+        <a href="about.html">About</a>
+        <a href="work.html">Work with William</a>
+        <a href="articles.html">Articles</a>
+        <a class="btn" href="book.html">Book a call</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Articles</p>
+      <h1>Your client has noticed AI. Your fee proposal has not.</h1>
+      <p class="sub">What the RIBA AI Report figures say about fees, and how to hold your number when a client raises it.</p>
+    </div>
+  </section>
+</div>
+<div class="cream">
+  <section>
+    <div class="wrap">
+      <p class="fieldnote">By William Ringsdorf &middot; 7 September 2026</p>
+      <div class="stats" style="margin:36px 0 8px;"><div class="stat"><span class="num">74%</span><span class="label">of practices now use AI</span></div><div class="stat"><span class="num">7%</span><span class="label">say it has let them raise fees</span></div></div>
+      <div class="legal-body" style="margin-top:40px;">
+        <p>"We've seen what AI can do now, so this should be quicker, shouldn't it?"</p>
+<p>Somewhere in the UK this week an architect is sitting across a table from a client who has just said that, or something close to it, and is working out how to answer. The honest answer is complicated. The answer the client wants is a smaller number.</p>
+<p>Most practitioners will give the smaller number. Not because the client is right, but because nobody in the room has a better argument ready, and the silence after "shouldn't it?" is hard to hold.</p>
+<p>That silence is the subject of this piece. Not AI. The fee.</p>
+<h3>What the profession actually thinks</h3>
+<p>The RIBA AI Report 2026 came out in July. The headline was adoption: 74% of UK practices now use AI on at least some projects, up from 59% the year before and 41% the year before that, and nearly a third use it on most or every project. 73% say it has improved their productivity. 57% report a positive return on the investment.</p>
+<p>Then the report gets quieter. Fewer than one in six (17%) agree their designs are better because of AI. Only 21% say it makes them more optimistic about their organisation's future. 59% expect it to lead to staff reductions across the profession. 61% think it will make it harder for early-career architects to learn the job.</p>
+<p>And then the number that matters for this piece. Asked whether AI has allowed their practice to increase project fees, 7% of the practices using it agree. 58% disagree. Across all respondents, 13% think it ever will.</p>
+<p>So three-quarters of the profession has adopted a tool that makes it more productive, and one in fourteen has managed to charge more as a result. The productivity is going somewhere. It is not going into the fee.</p>
+<p>Read those numbers together and the picture is not "AI is remaking architecture for the better". It is "AI is making the drawings faster, and almost nobody is sure that is good for them".</p>
+<p>None of this is a surprise. It was already in RIBA's first AI report two years ago: 56% of architects expected AI to have a negative effect on fee income. Only 15% expected a positive one. A year later, in the 2025 report, 71% agreed that current fee levels are unsustainable given the complexity of projects, and half still expected AI to make fees worse.</p>
+<p>Faster production, falling fees. The profession saw this coming. What it did not do was change how it prices.</p>
+<h3>The fee was never the drawings</h3>
+<p>Here is the mechanism, because once you see it you cannot unsee it.</p>
+<p>Most architects' fees are, in practice, a proxy for hours. A percentage of construction cost, a lump sum built up from an estimate of days, an hourly rate with a cap: all of them are hours in a different coat. And for thirty years that was fine, because the hours were mostly production, and production was the visible part of the work. The client saw the drawings arrive and understood, roughly, what they were paying for.</p>
+<p>AI has just made production visibly cheaper. Not the whole of it, but enough of it, and visibly enough, that the client has re-anchored. If the render takes an hour instead of a day, and the client knows it, then a fee built on days looks padded. The client is not being unreasonable. They are doing exactly what you would do with a builder who quoted three days for a job you watched take one.</p>
+<p>The problem is that the hours were never what you were selling. You were selling the decision about what to draw. Which of the eleven possible layouts works for this family, this budget, this orientation, this planning officer. Whether to fight the conservation officer or work round her. Where the money should go and where it should not. The moment in week three when you tell the client the thing they wanted will not work and what will.</p>
+<p>None of that got cheaper. Most of it got more valuable, because a client who can generate forty options in an afternoon needs someone to tell them which one is right more than they ever did.</p>
+<p>AI handles the production. You hold the judgement. The fee should follow the judgement.</p>
+<h3>Why the margin cannot take it</h3>
+<p>If the fee had a cushion in it, this would be an interesting debate and nothing more. It does not.</p>
+<p>RIBA's own benchmarking has put the average operating margin of UK practices at around 7% for years. Law firms and accountants of similar size run at 15 to 25%. On a 7% margin, a client who talks you down by a tenth has not trimmed your profit; they have removed it and taken some of your salary as well.</p>
+<p>Then add the pattern that was corroding fees before anyone had heard of a large language model: 17 to 22% of the work on a typical project falls outside the original scope, and only about a quarter of it is ever billed. "Can you just?" was already the most expensive phrase in the profession. AI gives it a new sentence to lean on: "surely that's a two-minute job now".</p>
+<p>Take the rear extension that gets quoted at £5,000. Counted properly, with every extra visit, every re-submission and every revision the client's sister asked for, it costs £6,480 to deliver. A £1,480 loss on a job that everyone agreed went well. Now put an AI-aware client in the room, pushing the £5,000 towards £4,500 because "the drawings are quicker these days", and asking for the extra revisions on the grounds that the software does them anyway. The loss doubles, and the architect still thinks the problem is the client.</p>
+<p>Practices on 7% margins have no room to absorb a market that has re-anchored. That is not a forecast. It is arithmetic.</p>
+<h3>It was never a skills problem</h3>
+<p>This is where most articles about AI and architecture tell you to adopt faster, learn the tools, and stay ahead. That advice is fine as far as it goes. It has nothing to do with the fee.</p>
+<p>Adoption and pricing are independent decisions. You can be the most fluent AI user in your county and still quote from an hours estimate that the client now discounts on sight. You can refuse to touch the stuff and still price on judgement and hold your number. What decides the fee is the fee system, and most practices do not have one. They have a feeling, a percentage they inherited, and the last quote.</p>
+<p>That is not a personal failing. We are trained to design, not to price. Architecture school teaches almost everything except how to make money, and the professional bodies stopped publishing fee guidance long ago. The gap was there before AI arrived. AI has just made it visible to the client.</p>
+<p>Fourteen years running my own practice taught me the cost of that gap the hard way: a fee built on what felt winnable, no margin for the bad year, and then the bad year. What rebuilt it, in Munich and afterwards, was not better software. It was a way of pricing that started from cost and judgement rather than from hours and hope. That became the PRICE Framework: Pricing Foundations, Resistance Protocol, Invoice Architecture, Cash Flow Clarity, Earnings First. Not one of the five steps mentions AI, and not one of them needs to.</p>
+<h3>What the proposal on your desk says without meaning to</h3>
+<p>Open your last fee proposal and read it as the client did. The odds are it lists deliverables: survey, sketch options, planning drawings, building regulations package, tender information. Perhaps a stage table with a percentage against each. Perhaps an hourly rate for "additional services".</p>
+<p>Every line of that is production. The document describes the drawings and says nothing about the decisions. So when the client learns the drawings are quicker, the document has already agreed with them.</p>
+<p>A proposal built on judgement reads differently, and it is not longer. Each stage names the decision it exists to make, and what the client gets out of it: at feasibility, whether the project is worth pursuing and at what budget; at concept, which of the options to take forward and why; at planning, a scheme the officer can approve and the neighbours can live with; at technical design, a building the contractor can price without guessing. The drawings appear as the record of those decisions, not as the product.</p>
+<p>Then two lines most proposals lack. What the fee includes, stated as a number of options and a number of revision rounds, so that the extra round has a price attached before anyone asks for it. And what happens when the brief changes, so that a change is a change and not a favour.</p>
+<p>That document does the arguing before the meeting starts. It is the difference between explaining your value under pressure and having already explained it.</p>
+<h3>What to say when the client says it</h3>
+<p>Back to the table. The client has just said "this should be quicker, shouldn't it?" Here is the shape of an answer that holds, built from the first two steps of the framework.</p>
+<p><strong>Agree with the true part.</strong> "Some of the production is quicker, yes. We use it where it helps." Denying it costs you credibility for nothing.</p>
+<p><strong>Move the fee to where the value is.</strong> "The fee isn't for the drawings. It's for getting the design right for this site and this budget, and for carrying it through planning and construction so it gets built the way it was designed." Say what the judgement covers, stage by stage. Most clients have never had this explained and are relieved to hear it.</p>
+<p><strong>Name what the faster production buys them.</strong> "What it does mean is that you'll see more options, earlier, and we can test the planning risk before you commit." The efficiency is real; it goes into the quality of the decision, not into a discount.</p>
+<p><strong>Hold the number.</strong> Fees are not a negotiation; they are a calculation. If your number came from your real cost rate and a margin a professional practice should earn, you can say it once and stop talking. If it came from a guess, you will fold, and the client will hear it.</p>
+<p>That last point is the whole thing. The answer only works if the number underneath it is real. Resistance Protocol, the second step, is about holding a fee under pressure, and it is useless without Pricing Foundations, the first, which is where the fee is built from your actual cost per hour rather than from what feels safe. Most practitioners who lose the AI conversation lose it there, before the client ever speaks.</p>
+<h3>The question AI is forcing</h3>
+<p>Strip the technology out and the question every practice now has to answer is an old one that could be avoided for a long time: what is this work worth, separate from the time it takes to produce it?</p>
+<p>Practices that can answer that will find AI is a margin gift. Production time falls, the fee holds, the difference is profit for the first time in years. Practices that cannot will negotiate from a weaker position every year, and will blame the software.</p>
+<p>If you want to know which of those two your practice is, before the next client says the line, the <a class="textlink" href="https://designprofit.co.uk/fee-audit">Fee Confidence Audit</a> will tell you in about 12 minutes. 21 questions across six areas, scored out of 100, with a written report on where the fee is leaking. It costs £37. If you would rather read first, the <a class="textlink" href="https://williamringsdorf.com/profit-guide.html">Profit Guide</a> is free and covers the cost-rate calculation the whole answer rests on.</p>
+<p>Your client has noticed AI. The fee proposal on your desk was written for a client who had not. One of them needs to change, and it is not the client.</p>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="navy">
+  <section class="call">
+    <div class="wrap">
+      <h2>Where to start</h2>
+      <p class="bigp">If you want to see where your own fees are leaking, the <a class="textlink accent" href="https://designprofit.co.uk/fee-audit">Fee Confidence Audit</a> takes about 12 minutes and costs &pound;37. If you would rather start with the reading, the <a class="textlink accent" href="https://williamringsdorf.com/profit-guide.html">Profit Guide</a> is free.</p>
+      
+      <p style="margin-top:40px;"><a class="textlink accent" href="articles.html">Back to Articles</a></p>
+    </div>
+  </section>
+</div>
+<div class="cream">
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="start.html">Start here</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work with William</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Tools and training</h4>
+          <ul>
+            <li><a href="https://designprofit.co.uk/fee-audit">Fee Confidence Audit</a></li>
+            <li><a href="https://designprofit.co.uk/apa">Free 20-minute training</a></li>
+            <li><a href="https://designprofit.co.uk/apa">The Architect's Profit Accelerator</a></li>
+            <li><a href="profit-guide.html">Free Profit Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="refunds.html">Refunds</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="bioline">William Ringsdorf &middot; 30+ years in UK and German architectural practice</p>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
