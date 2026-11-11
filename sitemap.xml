@@ -46,6 +46,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://williamringsdorf.com/diagnostic</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://williamringsdorf.com/strategy-day</loc>
     <lastmod>2026-09-09</lastmod>
     <priority>0.7</priority>
