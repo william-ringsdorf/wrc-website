@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Phase-Gate Guide · William Ringsdorf</title>
+<meta name="description" content="A free four-page Phase-Gate Guide with a change log: a gate at the end of each stage, sign-off in writing, and any later change priced before it is drawn.">
+<link rel="canonical" href="https://williamringsdorf.com/phase-gate-guide">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="William Ringsdorf">
+<meta property="og:title" content="Free Phase-Gate Guide · William Ringsdorf">
+<meta property="og:description" content="A free four-page Phase-Gate Guide with a change log: a gate at the end of each stage, sign-off in writing, and any later change priced before it is drawn.">
+<meta property="og:url" content="https://williamringsdorf.com/phase-gate-guide">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Phase-Gate Guide · William Ringsdorf">
+<meta name="twitter:description" content="A free four-page Phase-Gate Guide with a change log: a gate at the end of each stage, sign-off in writing, and any later change priced before it is drawn.">
+<style>
+  @font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2');}
+  @font-face{font-family:'Syne';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/syne-latin-400-normal.woff2') format('woff2');}
+  @font-face{font-family:'Syne';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/syne-latin-500-normal.woff2') format('woff2');}
+</style>
+<style>
+  :root{
+    --navy:#1A365D;
+    --cream:#F4ECD8;
+    --orange:#B04824;
+    --teal:#2A9D8F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Syne',sans-serif;font-weight:400;font-size:19px;line-height:1.65;color:var(--navy);background:var(--cream);}
+  .navy{background:var(--navy);color:var(--cream);}
+  .cream{background:var(--cream);color:var(--navy);}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  section{padding:110px 0;}
+  h1,h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-style:normal;line-height:1.08;}
+  h1{font-size:clamp(44px,6.4vw,76px);letter-spacing:-0.5px;}
+  h2{font-size:clamp(34px,4.2vw,54px);margin-bottom:34px;}
+  p{max-width:680px;}
+  a{color:inherit;}
+
+  /* Navigation */
+  nav{padding:26px 0;}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .wordmark{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;text-decoration:none;}
+  .navlinks{display:flex;align-items:center;gap:30px;flex-wrap:wrap;}
+  .navlinks a{font-size:16px;font-weight:500;text-decoration:none;}
+  .btn{display:inline-block;background:var(--orange);color:var(--cream);font-family:'Syne',sans-serif;font-weight:500;font-size:17px;text-decoration:none;padding:15px 32px;border:none;cursor:pointer;}
+  .btn:hover{background:#9A3E1F;}
+
+  /* Hero */
+  .hero{padding:130px 0 140px;}
+  .eyebrow{font-size:16px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:30px;}
+  .hero h1{max-width:900px;margin-bottom:36px;}
+  .hero .sub{font-size:21px;max-width:640px;margin-bottom:44px;}
+  .hero .actions{display:flex;align-items:center;gap:34px;flex-wrap:wrap;}
+  .textlink{font-weight:500;font-size:17px;text-decoration:underline;text-underline-offset:5px;}
+  .marked{position:relative;display:inline-block;}
+  .marked svg{position:absolute;left:0;bottom:-10px;width:100%;height:18px;}
+
+  /* Fork */
+  .fork-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:14px;}
+  @media(max-width:820px){.fork-grid{grid-template-columns:1fr;}}
+  .fork-card{border:2px solid var(--navy);padding:44px 40px;}
+  .fork-card h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:31px;margin-bottom:16px;line-height:1.15;}
+  .fork-card p{margin-bottom:26px;font-size:18px;}
+  .intro{font-size:21px;margin-bottom:38px;}
+
+  /* Reframe */
+  .accent{color:var(--orange);}
+  .navy .accent{color:#E8906E;}
+  .navy p .accent{font-weight:500;}  /* confirmed 23 Aug 2026: navy accent phrases short, 500 weight or larger */
+  .bigp{font-size:21px;}
+
+  /* Brutal math */
+  .math-line{display:flex;align-items:baseline;gap:26px;flex-wrap:wrap;margin:10px 0 44px;}
+  .math-line .state{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,4.4vw,58px);line-height:1.15;}
+  .math-line .arrow{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,4.4vw,58px);color:var(--orange);}
+  .math-line .small{display:block;font-family:'Syne',sans-serif;font-weight:500;font-size:16px;margin-top:8px;}
+
+  /* Story */
+  .story-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start;}
+  @media(max-width:820px){.story-grid{grid-template-columns:1fr;}}
+  .portrait{width:100%;height:auto;display:block;}
+  .stats{display:flex;gap:64px;flex-wrap:wrap;margin-top:56px;}
+  .stat .num{display:block;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:58px;line-height:1;}
+  .stat .label{display:block;font-size:16px;font-weight:500;margin-top:10px;}
+
+  /* Offers */
+  .offer{border-top:2px solid var(--navy);padding:44px 0;display:grid;grid-template-columns:1.1fr 2fr auto;gap:30px;align-items:start;}
+  @media(max-width:820px){.offer{grid-template-columns:1fr;gap:14px;}}
+  .offer:last-of-type{border-bottom:2px solid var(--navy);}
+  .offer h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:32px;line-height:1.12;}
+  .offer .price{display:block;font-family:'Syne',sans-serif;font-weight:500;font-size:18px;margin-top:10px;}
+  .offer p{font-size:18px;}
+  .offer .textlink{white-space:nowrap;margin-top:6px;}
+  .downladder{margin-top:44px;font-size:18px;}
+
+  /* Call */
+  .call p{margin-bottom:42px;}
+
+  /* Footer */
+  footer{padding:80px 0 60px;}
+  .foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:56px;}
+  @media(max-width:820px){.foot-grid{grid-template-columns:1fr;}}
+  footer h4{font-family:'Syne',sans-serif;font-weight:500;font-size:15px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;}
+  footer li a{font-size:17px;text-decoration:none;}
+  footer li a:hover{text-decoration:underline;}
+  .bioline{border-top:2px solid var(--navy);padding-top:28px;font-size:16px;font-weight:500;}
+
+  /* Mobile refinements */
+  @media(max-width:600px){
+    section{padding:72px 0;}
+    .hero{padding:84px 0 96px;}
+    nav .wrap{justify-content:center;text-align:center;}
+    .navlinks{justify-content:center;gap:18px;row-gap:12px;}
+    .math-line{flex-direction:column;align-items:flex-start;gap:14px;}
+    .math-line .arrow{transform:rotate(90deg);transform-origin:center;width:fit-content;margin-left:10px;}
+    .stats{gap:40px;}
+    .fork-card{padding:34px 26px;}
+  }
+
+  .price-list{list-style:none;max-width:760px;}
+  .ladder{list-style:none;max-width:760px;}
+  .ladder li{padding:30px 0;border-top:2px solid rgba(244,236,216,0.25);}
+  .ladder li:last-child{border-bottom:2px solid rgba(244,236,216,0.25);}
+  .cream .ladder li{border-color:rgba(26,54,93,0.25);}
+  .ladder h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:29px;margin-bottom:8px;line-height:1.15;}
+  .ladder p{font-size:18px;margin-bottom:10px;}
+  .numbered{list-style:none;max-width:760px;}
+  .numbered li{display:grid;grid-template-columns:70px 1fr;gap:22px;align-items:start;padding:26px 0;border-top:2px solid rgba(244,236,216,0.25);}
+  .numbered li:last-child{border-bottom:2px solid rgba(244,236,216,0.25);}
+  .cream .numbered li{border-color:rgba(26,54,93,0.25);}
+  .numbered .n{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:52px;line-height:1;}
+  .numbered h3{font-family:'Syne',sans-serif;font-weight:500;font-size:20px;margin-bottom:6px;}
+  .numbered p{font-size:18px;}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:44px;max-width:900px;}
+  @media(max-width:820px){.twocol{grid-template-columns:1fr;}}
+  .twocol h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:28px;margin-bottom:14px;}
+  .twocol p{font-size:18px;}
+  .page-hero{padding:100px 0 110px;}
+  .page-hero h1{max-width:880px;margin-bottom:30px;}
+  .page-hero .sub{font-size:21px;max-width:640px;margin-bottom:40px;}
+  @media(max-width:600px){.page-hero{padding:72px 0 84px;}}
+  .formfield{max-width:640px;margin-bottom:26px;}
+  .formfield label{display:block;font-weight:500;font-size:17px;margin-bottom:10px;}
+  .formfield .opts{display:flex;gap:12px;flex-wrap:wrap;}
+  .formfield .opt{border:2px solid var(--navy);padding:10px 18px;font-size:16px;}
+  .formfield input[type=text]{width:100%;border:2px solid var(--navy);background:transparent;padding:14px;font-family:'Syne',sans-serif;font-size:17px;color:var(--navy);}
+  .cal-placeholder{border:2px solid var(--navy);max-width:640px;padding:70px 40px;text-align:center;font-weight:500;font-size:17px;margin-top:20px;}
+  .fieldnote{font-size:16px;max-width:640px;}
+  .ghl-form{max-width:640px;}
+  .ghl-form iframe{display:block;width:100%;min-height:440px;}
+
+  .draft-note{background:var(--orange);color:var(--cream);font-weight:500;font-size:16px;padding:12px 0;text-align:center;}
+  .legal-body{max-width:720px;}
+  .legal-body h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:28px;margin:40px 0 14px;}
+  .legal-body p, .legal-body li{font-size:18px;}
+  .legal-body ul{padding-left:22px;margin:10px 0;}
+  .confirm{color:var(--orange);font-weight:500;}
+</style>
+<style>
+  /* Phase-Gate Guide pages */
+  .hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:center;}
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:44px;}}
+  .cover{display:block;width:100%;max-width:330px;height:auto;border:2px solid var(--cream);}
+  .points{list-style:none;max-width:640px;margin-bottom:44px;}
+  .points li{padding:14px 0;border-top:2px solid rgba(244,236,216,0.25);font-size:19px;font-weight:500;}
+  .points li:last-child{border-bottom:2px solid rgba(244,236,216,0.25);}
+  .author-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start;}
+  @media(max-width:820px){.author-grid{grid-template-columns:1fr;gap:36px;}.author-grid .portrait{max-width:300px;}}
+  .author-grid p{margin-bottom:20px;}
+  .faq{max-width:760px;}
+  .faq details{border-top:2px solid rgba(244,236,216,0.25);padding:24px 0;}
+  .faq details:last-child{border-bottom:2px solid rgba(244,236,216,0.25);}
+  .faq summary{font-weight:500;font-size:20px;cursor:pointer;}
+  .faq p{font-size:18px;margin-top:14px;}
+  .cream .faq details{border-color:rgba(26,54,93,0.25);}
+  .closing p{margin-bottom:38px;}
+  .offer-price{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(34px,4.4vw,52px);line-height:1.1;margin-bottom:24px;}
+  .offer-band p{margin-bottom:22px;}
+  .offer-band .btn{margin-top:14px;}
+</style>
+</head>
+<body>
+
+<div class="navy">
+  <nav>
+    <div class="wrap">
+      <a class="wordmark" href="index.html">William Ringsdorf</a>
+    </div>
+  </nav>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Free Phase-Gate Guide</p>
+          <h1>The fee you quote is not always <span class="marked">the fee you keep
+            <svg viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12 C 60 4, 140 16, 296 8" fill="none" stroke="#2A9D8F" stroke-width="6" stroke-linecap="round" opacity="0.4"/></svg></span></h1>
+          <p class="sub">One place it goes is revisions to work the client has already approved. The Phase-Gate Guide closes that leak. Four pages, with a change log. Free, sent to your inbox.</p>
+          <ul class="points">
+            <li>A gate at the end of each stage</li>
+            <li>Sign-off in writing</li>
+            <li>Any later change priced before it is drawn</li>
+          </ul>
+          <div class="actions">
+            <a class="btn" href="#get-guide">Send me the guide</a>
+          </div>
+        </div>
+        <img class="cover" src="img/phase-gate-guide-cover.jpg" width="662" height="936" alt="First page of the Phase-Gate Guide, from The Architect's Profit Accelerator">
+      </div>
+    </div>
+  </section>
+</div>
+<div class="cream">
+  <section id="get-guide">
+    <div class="wrap">
+      <h2>Where should it go?</h2>
+      <div class="ghl-form"><iframe src="https://api.leadconnectorhq.com/widget/form/fU36BqAwJTYNtFIScEvy" style="width:100%;height:100%;border:none;border-radius:0" id="inline-fU36BqAwJTYNtFIScEvy" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Phase-Gate Guide Opt-in" data-height="440" data-layout-iframe-id="inline-fU36BqAwJTYNtFIScEvy" data-form-id="fU36BqAwJTYNtFIScEvy" title="Phase-Gate Guide Opt-in"></iframe></div>
+      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+      <p class="fieldnote" style="margin-top:22px;">You get the guide and one follow-up email about the PRICE Profit Diagnostic. No daily emails. <a href="privacy.html">Privacy policy</a>.</p>
+    </div>
+  </section>
+</div>
+<div class="navy">
+  <section>
+    <div class="wrap">
+      <h2>Small changes, absorbed one at a time</h2>
+      <p class="bigp" style="margin-bottom:24px;">The change looks small, the relationship is good, and absorbing it feels like the professional thing to do. A few of those on one job and the fee no longer covers the work.</p>
+      <p class="bigp">That is <span class="accent">structural, not personal</span>. Nothing in the job said where one stage ended and the next began, so nothing said when a change became new work. A gate says it.</p>
+    </div>
+  </section>
+</div>
+<div class="cream">
+  <section>
+    <div class="wrap">
+      <h2>Four pages, made to be used on a live job</h2>
+      <ol class="numbered">
+        <li><span class="n">1</span><div><h3>Read this first</h3><p>What the guide is for and the leak it closes.</p></div></li>
+        <li><span class="n">2</span><div><h3>Your gates</h3><p>Five steps for running a gate, and a table of eight phases from appointment and brief to handover, with RIBA stage numbers where they apply. Each has room for the deliverables, the sign-off date and the stage payment.</p></div></li>
+        <li><span class="n">3</span><div><h3>Decisions and Changes</h3><p>A schedule of the decisions your client has to make and the dates they are needed by, then four steps for a change that arrives after sign-off.</p></div></li>
+        <li><span class="n">4</span><div><h3>Change Log</h3><p>A running record of every change request: date, details, estimated time, agreed extra fee and invoice status.</p></div></li>
+      </ol>
+      <p style="margin-top:34px;">The PDF has form fields, so you can fill it in on screen or print it.</p>
+    </div>
+  </section>
+</div>
+<div class="navy">
+  <section>
+    <div class="wrap">
+      <div class="author-grid">
+        <img class="portrait" src="img/william-ringsdorf.jpg" width="900" height="900" alt="William Ringsdorf">
+        <div>
+          <h2>Who wrote it</h2>
+          <p class="bigp">William Ringsdorf, Practice Strategist. 30 years in UK and German architectural practice, 14 of them running his own.</p>
+          <p>The guide is one of the working tools from <span class="accent">The Architect's Profit Accelerator</span>, given here as course buyers receive it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="cream">
+  <section>
+    <div class="wrap">
+      <h2>Before you download</h2>
+      <div class="faq">
+        <details><summary>Does it cost anything?</summary><p>No. The guide goes to the email address you give, and no card details are asked for.</p></details>
+        <details><summary>Who is it for?</summary><p>Principals of UK architecture practices who agree fees by stage. If you have ever redrawn a signed-off stage without charging for it, this is for you.</p></details>
+        <details><summary>What will you send me afterwards?</summary><p>The guide, and one follow-up email about the PRICE Profit Diagnostic. Every email carries an unsubscribe link.</p></details>
+        <details><summary>Is everything in the four pages?</summary><p>Nearly. One step refers to the Change Request Script Pack, which is part of the course and is not included. The guide and the Change Log work without it.</p></details>
+        <details><summary>Does it replace my appointment?</summary><p>No. It is a working tool, not a contract and not legal advice. The phases and gates go into your appointment in your own terms.</p></details>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="navy">
+  <section class="closing">
+    <div class="wrap">
+      <h2>Put a gate on the next stage you finish</h2>
+      <p class="bigp">Once a phase is signed off, any change to it is new work and needs a new fee.</p>
+      <a class="btn" href="#get-guide">Send me the guide</a>
+    </div>
+  </section>
+</div>
+<div class="cream">
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>The guide</h4>
+          <ul>
+            <li><a href="phase-gate-guide.html">Free Phase-Gate Guide</a></li>
+            <li><a href="https://designprofit.co.uk/apa">The Architect's Profit Accelerator</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="bioline">William Ringsdorf · 30+ years in UK and German architectural practice</p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
