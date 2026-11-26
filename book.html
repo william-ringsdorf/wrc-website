@@ -240,7 +240,6 @@
         <h3>At this stage, the call is not the best first step</h3>
         <p>Under £100k, the fastest gains come from the tools built for exactly this point: the £37 Fee Confidence Audit before the next quote goes out, and the free 20-minute training. They cost less than the call leads to, and they fit better.</p>
         <a class="btn" href="start.html">Go to Start here</a>
-        <button type="button" class="textlink" id="book-anyway">Book the call anyway</button>
       </div>
     </div>
   </section>
@@ -303,7 +302,6 @@
   var iframe = document.getElementById('cal-iframe');
   var placeholder = document.getElementById('cal-placeholder');
   var pressing = document.getElementById('pressing');
-  var override = false;
 
   function show(el){
     [wait, cal, start].forEach(function(x){ x.hidden = (x !== el); });
@@ -330,18 +328,16 @@
       var pressed = g.querySelector('[aria-pressed="true"]');
       if (pressed && pressed.getAttribute('data-route') === 'start') { toStart = true; }
     });
-    show(toStart && !override ? start : cal);
+    show(toStart ? start : cal);
   }
   groups.forEach(function(g){
     g.addEventListener('click', function(e){
       var b = e.target.closest('.opt'); if (!b) return;
       g.querySelectorAll('.opt').forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
       answers[g.getAttribute('data-field')] = b.getAttribute('data-value');
-      override = false;
       route();
     });
   });
-  document.getElementById('book-anyway').addEventListener('click', function(){ override = true; route(); });
   pressing.addEventListener('change', function(){ if (!cal.hidden) loadCalendar(); });
 })();
 </script>
