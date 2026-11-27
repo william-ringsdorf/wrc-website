@@ -309,3 +309,9 @@ h1,h2,h3{text-wrap:balance;}
 .numbered h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;line-height:1.15;margin-bottom:10px;}
 /* Four ladder cards sit two by two rather than three and one */
 @media (min-width:901px){.ladder:has(> li:nth-child(4):last-child){grid-template-columns:repeat(2,1fr);}}
+/* Phone header: less air, so the first screen of each page starts higher */
+@media (max-width:600px){
+  .site-header nav{padding:10px 0;}
+  .site-header nav .wrap{gap:8px;}
+  .navlinks{gap:10px 22px;}
+}
